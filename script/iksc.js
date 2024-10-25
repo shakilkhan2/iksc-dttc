@@ -31,3 +31,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// 
+// Function to get query parameter by name
+function getQueryParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+// Get the article ID from the URL
+const articleId = getQueryParameter('id');
+
+// Find the article in the articles array
+const article = articles.find(article => article.id == articleId);
+
+if (article) {
+  // Populate the article content
+  document.querySelector('#article-title').innerText = article.title;
+  document.querySelector('#article-content').innerText = article.content;
+  document.querySelector('#article-image').src = article.image;
+}
