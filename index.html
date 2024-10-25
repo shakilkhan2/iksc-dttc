@@ -31,42 +31,51 @@
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
 
-    <!-- Navbar Start -->
-    <nav class="bg-white shadow-lg w-full fixed top-0 left-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-xl font-bold text-blue-500">IKSC - DTTC</a>
-                </div>
-                <div class="hidden md:flex space-x-4 items-center">
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">About</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Services</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a>
-                    <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">Sign In</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-600 hover:text-blue-500 focus:outline-none" id="mobile-menu-button">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+<!-- Navbar Start -->
+<nav class="bg-white shadow-lg w-full fixed top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="#" class="text-xl font-bold text-blue-500">IKSC - DTTC</a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">About</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Services</a>
+                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a>
+                <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">Sign In</a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger/Cross Icon) -->
+            <div class="md:hidden flex items-center">
+                <button class="text-gray-600 hover:text-blue-500 focus:outline-none transform transition-transform duration-300" id="mobile-menu-button">
+                    <!-- Hamburger Icon (default) -->
+                    <svg class="h-6 w-6 hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Cross Icon (hidden by default) -->
+                    <svg class="h-6 w-6 cross-icon hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
         </div>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div class="md:hidden" id="mobile-menu" style="display: none;">
-            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Home</a>
-            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">About</a>
-            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Services</a>
-            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Contact</a>
-            <a href="#" class="block px-4 py-2 text-white bg-blue-500 hover:bg-blue-600">Sign In</a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div class="md:hidden transition-max-height duration-300 ease-in-out overflow-hidden max-h-0" id="mobile-menu">
+        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Home</a>
+        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">About</a>
+        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Services</a>
+        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Contact</a>
+        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Sign In</a>
+    </div>
+</nav>
+<!-- Navbar End -->
+
 
     <!-- Main Content -->
     <div class="text-center pt-20 fade-in-up">
@@ -74,19 +83,7 @@
         <h1 class="text-4xl text-blue-500 mt-4 fade-in-up-delay">The site is under construction, we will be back soon Insha'Allah...</h1>
     </div>
 
-    <script>
-        // Toggle mobile menu
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            if (mobileMenu.style.display === 'none') {
-                mobileMenu.style.display = 'block';
-            } else {
-                mobileMenu.style.display = 'none';
-            }
-        });
-    </script>
+    <script src="./script/iksc.js"></script>
 </body>
 
 </html>
