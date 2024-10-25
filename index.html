@@ -1,89 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IKSC - DTTC</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+  </head>
 
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 2s ease-in-out;
-        }
-
-        .fade-in-up-delay {
-            animation: fadeInUp 3s ease-in-out;
-        }
-    </style>
-</head>
-
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-
-<!-- Navbar Start -->
-<nav class="bg-white shadow-lg w-full fixed top-0 left-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+  <body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <header>
+      <!-- Navbar Start -->
+      <nav class="bg-white shadow-lg w-full fixed top-0 left-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-16">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
-                <a href="#" class="text-xl font-bold text-blue-500">IKSC - DTTC</a>
+              <a href="#" class="text-xl font-bold text-blue-500"
+                >IKSC - DTTC</a
+              >
             </div>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4 items-center">
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">About</a>
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Services</a>
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a>
-                <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300">Sign In</a>
+              <a
+                href="#"
+                class="text-gray-600 hover:text-blue-500 transition duration-300"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 hover:text-blue-500 transition duration-300"
+                >About</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 hover:text-blue-500 transition duration-300"
+                >Services</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 hover:text-blue-500 transition duration-300"
+                >Contact</a
+              >
+              <a
+                href="#"
+                class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+                >Sign In</a
+              >
             </div>
 
             <!-- Mobile Menu Button (Hamburger/Cross Icon) -->
             <div class="md:hidden flex items-center">
-                <button class="text-gray-600 hover:text-blue-500 focus:outline-none transform transition-transform duration-300" id="mobile-menu-button">
-                    <!-- Hamburger Icon (default) -->
-                    <svg class="h-6 w-6 hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <!-- Cross Icon (hidden by default) -->
-                    <svg class="h-6 w-6 cross-icon hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+              <button
+                class="text-gray-600 hover:text-blue-500 focus:outline-none transform transition-transform duration-300"
+                id="mobile-menu-button"
+              >
+                <!-- Hamburger Icon (default) -->
+                <svg
+                  class="h-6 w-6 hamburger-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <!-- Cross Icon (hidden by default) -->
+                <svg
+                  class="h-6 w-6 cross-icon hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
             </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Mobile Menu (Hidden by Default) -->
-    <div class="md:hidden transition-max-height duration-300 ease-in-out overflow-hidden max-h-0" id="mobile-menu">
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Home</a>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">About</a>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Services</a>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Contact</a>
-        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100">Sign In</a>
-    </div>
-</nav>
-<!-- Navbar End -->
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div
+          class="md:hidden transition-max-height duration-300 ease-in-out overflow-hidden max-h-0"
+          id="mobile-menu"
+        >
+          <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100"
+            >Home</a
+          >
+          <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100"
+            >About</a
+          >
+          <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100"
+            >Services</a
+          >
+          <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100"
+            >Contact</a
+          >
+          <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-100"
+            >Sign In</a
+          >
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
 
+    <main>
+      <!-- Main Blog Section -->
+      <section class="bg-gray-100 py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+          <!-- Featured Post -->
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+              Featured Post
+            </h2>
+            <div
+              class="relative bg-white shadow-lg rounded-lg overflow-hidden group"
+            >
+              <img
+                src="./media/quran.webp"
+                alt="Featured Post Image"
+                class="w-full h-64 md:h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black opacity-50 group-hover:opacity-30 transition-opacity"
+              ></div>
+              <div class="absolute bottom-0 p-6">
+                <h3 class="text-2xl font-semibold text-white">
+                  From U.S. Dominance to Emerging Powers: A Global Economic
+                  Shift
+                </h3>
+                <p class="text-white mt-2">
+                  Today the U.S. is the World’s largest economy and a leadership
+                  position in various international institutions.
+                  
+                </p>
+                <a
+                  href="#"
+                  onclick="toggleReadMore('more-text-1', 'read-more-btn-1')" id="read-more-btn-1"
+                  class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
 
-    <!-- Main Content -->
-    <div class="text-center pt-20 fade-in-up">
-        <p class="text-2xl text-gray-700">Assalamu Alaikum,</p>
-        <h1 class="text-4xl text-blue-500 mt-4 fade-in-up-delay">The site is under construction, we will be back soon Insha'Allah...</h1>
-    </div>
+          <!-- Latest Posts -->
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+              Latest Posts
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Blog Card -->
+              <div
+                class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src="https://source.unsplash.com/random/400x300?1"
+                  alt="Post Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">
+                    Post Title One
+                  </h3>
+                  <p class="text-gray-600 mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                  </p>
+                  <a href="#" class="text-blue-500 mt-4 block">Read More</a>
+                </div>
+              </div>
+
+              <!-- Repeat for more blog cards -->
+              <div
+                class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src="https://source.unsplash.com/random/400x300?2"
+                  alt="Post Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">
+                    Post Title Two
+                  </h3>
+                  <p class="text-gray-600 mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                  </p>
+                  <a href="#" class="text-blue-500 mt-4 block">Read More</a>
+                </div>
+              </div>
+
+              <div
+                class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src="https://source.unsplash.com/random/400x300?3"
+                  alt="Post Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">
+                    Post Title Three
+                  </h3>
+                  <p class="text-gray-600 mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                  </p>
+                  <a href="#" class="text-blue-500 mt-4 block">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories Section -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+              Categories
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              <a
+                href="#"
+                class="px-3 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                >Tech</a
+              >
+              <a
+                href="#"
+                class="px-3 py-1 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
+                >Health</a
+              >
+              <a
+                href="#"
+                class="px-3 py-1 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors"
+                >Lifestyle</a
+              >
+              <a
+                href="#"
+                class="px-3 py-1 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
+                >Business</a
+              >
+              <a
+                href="#"
+                class="px-3 py-1 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition-colors"
+                >Travel</a
+              >
+              <a
+                href="#"
+                class="px-3 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors"
+                >Food</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
 
     <script src="./script/iksc.js"></script>
-</body>
-
+  </body>
 </html>
